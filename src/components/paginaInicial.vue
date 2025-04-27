@@ -15,9 +15,11 @@
         </section>
 
         <section class="digiteOnome"> <!--Caso o convidado aceite o convite-->
-          <input type="text" id="digiteSeuNome" placeholder="Digite seu nome" >
-          <input type="tel" id="digiteSeuTel" placeholder="Digite seu telefone">
-          <button type="submit" id="enviarDados">Enviar</button>
+          <form id="formulário">
+            <input type="text" id="digiteSeuNome" placeholder="Digite seu nome" required >
+            <input type="text" id="digiteSeuTel" placeholder="Digite seu telefone" required>
+            <button type="submit" id="enviarDados">Enviar</button>
+          </form>
         </section>
 
         <section class="simOuNao"> <!--Apelo ao convidado-->
@@ -40,24 +42,69 @@
 export default {
   name: 'homePage',
 }
+
 document.addEventListener('DOMContentLoaded', ()=> {
+
   let conviteAceito = document.getElementById('SIM');
   let apeloAoConvidado = document.getElementsByClassName("simOuNao");
   let preencherDados = document.getElementsByClassName("digiteOnome");
+  let conviteRecusado = document.getElementById('NAO');
+  let agradecerAoUsuario = document.getElementsByClassName("agradecimento");
 
-
-  conviteAceito.addEventListener('click', function exec() {
+  conviteAceito.addEventListener('click', function exec() { /*CASO O USUARIO TENHA ACEITO O CONVITE */
     
     preencherDados[0].style.display = "flex";
     apeloAoConvidado[0].style.display = "none";
 
   });
+
+  conviteRecusado.addEventListener('click', function recusado() { /*CASO O USUARIO NÃO TENHA ACEITADO O CONVITE */
+    apeloAoConvidado[0].style.display = 'none';
+    agradecerAoUsuario[0].style.display = 'flex';
+  })
+
+  const formularioInserir = document.getElementById('formulário');
+  formularioInserir.addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  const nome = document.getElementById('digiteSeuNome').value;
+  const telefone = document.getElementById('digiteSeuTel').value;
+
+  try {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbwUG-PGNe-rzwLXu2gbLKQ831TWiFuw1rNaHbL-gb5ti7mC-hfv_AnbAxp_0ocsTxkxHg/exec', {
+      method: 'POST',
+      mode: 'cors', // Ou 'no-cors' caso você queira apenas enviar sem ver resposta
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ nome, telefone })
+    });
+
+    // Verificar se a requisição foi bem-sucedida
+    if (response.ok) {
+      alert('Enviado com sucesso!');
+    } else {
+      alert('Falha ao enviar os dados: ' + response.statusText);
+    }
+
+    // Resetando o formulário
+    formularioInserir.reset();
+
+  } catch (error) {
+    // Caso ocorra um erro na requisição
+    console.error('Erro ao enviar os dados:', error);
+    alert('Ocorreu um erro ao enviar os dados.');
+  }
+});
+
+  
 });
 
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 * {
   padding: 0;
   margin: 0;
@@ -158,7 +205,12 @@ document.addEventListener('DOMContentLoaded', ()=> {
     width: 100%;
     height: auto;
 
-  } 
+  }
+  .digiteOnome form {
+    display: flex;
+    flex-direction: column;
+  }
+
   .digiteOnome input {
     padding: 12px;
     margin-top: 5px;
@@ -175,5 +227,12 @@ document.addEventListener('DOMContentLoaded', ()=> {
   /* CASO O CONVIDADO RECUSE */
   .agradecimento {
     display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #6a8e2373;
+    height: 45px;
+    width: auto;
+    border-radius: 22px;
+    
   }
 </style>  
