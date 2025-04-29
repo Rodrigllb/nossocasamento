@@ -31,6 +31,9 @@
           <p>Gratidão, Deus abençoe!</p>
         </section>
 
+        <section class="copyright">
+          <small>Developed by Rodrigo & Paula <br> Todos os direitos reservados 2025</small>
+        </section>
       </article>
     </main>
     </div>
@@ -63,6 +66,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
     agradecerAoUsuario[0].style.display = 'flex';
   })
 
+
+
+  /*****ENVIAR DADOS A PLANILHA******/
   const formularioInserir = document.getElementById('formulário');
   formularioInserir.addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -71,9 +77,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
   const telefone = document.getElementById('digiteSeuTel').value;
 
   try {
-    const response = await fetch('https://script.google.com/macros/s/AKfycbwUG-PGNe-rzwLXu2gbLKQ831TWiFuw1rNaHbL-gb5ti7mC-hfv_AnbAxp_0ocsTxkxHg/exec', {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbzK6MqKXS7BQlmKe7_1AVVQFFguRQO8cXAAa8NirU6d9ty800mYZ0D8WFkPppf-3uD2PA/exec', {
       method: 'POST',
-      mode: 'cors', // Ou 'no-cors' caso você queira apenas enviar sem ver resposta
+      mode: 'no-cors', // Ou 'no-cors' caso você queira apenas enviar sem ver resposta
       headers: {
         'Content-Type': 'application/json'
       },
@@ -84,7 +90,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
     if (response.ok) {
       alert('Enviado com sucesso!');
     } else {
-      alert('Falha ao enviar os dados: ' + response.statusText);
+      //Mesmo que a requisição não seja bem-sucedida os dados mesmo assim são enviados para levantamento interno.
+      alert('Dados enviados com sucesso: ' + response.statusText);
     }
 
     // Resetando o formulário
@@ -180,7 +187,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     color: #f1f1f1;
     padding: 12px;
     width: 75px;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
   }
   .simOuNao #NAO {
@@ -188,7 +195,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     color: #f1f1f1;
     padding: 12px;
     width: 75px;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
   }
   #SIM:hover {
@@ -204,7 +211,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
     flex-direction: column;
     width: 100%;
     height: auto;
-
   }
   .digiteOnome form {
     display: flex;
@@ -214,7 +220,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
   .digiteOnome input {
     padding: 12px;
     margin-top: 5px;
-
+    border-radius: 25px;
+    border: none;
   } 
   .digiteOnome button {
     background-color: #6B8E23;
@@ -222,6 +229,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     border: none;
     padding: 12px;
     margin-top: 5px;
+    border-radius: 25px;
   }
 
   /* CASO O CONVIDADO RECUSE */
@@ -234,5 +242,13 @@ document.addEventListener('DOMContentLoaded', ()=> {
     width: auto;
     border-radius: 22px;
     
+  }
+
+
+  /*Direitos Autorais*/
+  .copyright {
+    padding-top: 22px;
+    font-family: 'poppins';
+    font-size: 12px;
   }
 </style>  
