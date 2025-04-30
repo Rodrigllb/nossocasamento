@@ -46,6 +46,8 @@ export default {
   name: 'homePage',
 }
 
+//INTERATIVIDADE DA PÁGINA INICIAL -> ACEITAR OU RECUSAR.
+
 document.addEventListener('DOMContentLoaded', ()=> {
 
   let conviteAceito = document.getElementById('SIM');
@@ -68,7 +70,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
 
 
-  /*****ENVIAR DADOS A PLANILHA******/
+  /*****ENVIAR DADOS PARA A PLANILHA******/
   const formularioInserir = document.getElementById('formulário');
   formularioInserir.addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -112,12 +114,12 @@ document.addEventListener('DOMContentLoaded', ()=> {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-* {
-  padding: 0;
+* { /*Estilizações globais*/
+  padding: 0; 
   margin: 0;
   box-sizing: border-box;
 }
-  #containerPrincipal {
+  #containerPrincipal { /*Container principal da pagina inicial*/
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -130,14 +132,14 @@ document.addEventListener('DOMContentLoaded', ()=> {
     background-size: cover;
     background-color: #f3f3f396;
   }
-
-  .containerFilho {
+ 
+  .containerFilho { /*Container filho*/
     border-radius: 25px;
     background-color: #f1f1f1da;
     padding: 45px;
   }
 
-  header {
+  header { /*Cabeçalho onde contém a logo */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -148,7 +150,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     width: 185px;
   }
 
-  main article {
+  main article { /*Corpo do documento onde contém textos e o formulário para preenchimento */
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -161,11 +163,11 @@ document.addEventListener('DOMContentLoaded', ()=> {
     text-align: center;
   }
 
-  .contextualizaçao {
+  .contextualizaçao { /*Container onde contém a contextualização referente ao convite*/
     opacity: 80%;
   }
 
-  .aceitaNossoConvite h2 {
+  .aceitaNossoConvite h2 { /*Container onde está a estilização do titulo de nível 2*/
     font-family: 'Alex Brush';
     font-size: 45px;
     font-weight: 200;
@@ -173,7 +175,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     margin: 0;
   }
 
-  .simOuNao {
+  .simOuNao { /*Container de apelo ao convidado*/
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -182,7 +184,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     height: 95px;
 
   }
-  .simOuNao #SIM {
+  .simOuNao #SIM { /*Botão de aceitar */
     background-color: #6B8E23;
     color: #f1f1f1;
     padding: 12px;
@@ -190,7 +192,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     border-radius: 25px;
     cursor: pointer;
   }
-  .simOuNao #NAO {
+  .simOuNao #NAO { /*Botão de recusar */
     background-color: #B22222;
     color: #f1f1f1;
     padding: 12px;
@@ -206,7 +208,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
   }
 
   /* CASO O CONVIDADO DIGA SIM */
-  .digiteOnome {
+  .digiteOnome { /*Estilização do container onde está o formulário e demais elementos*/
     display: none;
     flex-direction: column;
     width: 100%;
@@ -251,4 +253,5 @@ document.addEventListener('DOMContentLoaded', ()=> {
     font-family: 'poppins';
     font-size: 12px;
   }
+
 </style>  
