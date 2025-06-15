@@ -18,6 +18,38 @@
           <form id="formulário">
             <input type="text" id="digiteSeuNome" placeholder="Digite seu nome" required >
             <input type="text" id="digiteSeuTel" placeholder="Digite seu telefone" required>
+    
+            <select name="ativarLista" id="ativarLista" required>
+              <option value="Presentei-nos">Escolha um presente!</option>
+              <option value="Jogo de xícaras">Jogo de Xícara</option>
+              <option value="Ferro de Passar">Ferro de passar</option>
+              <option value="Escorredor de pratos">Escorredor de pratos</option>
+              <option value="Garrafa de café">Garrafa de café</option>
+              <option value="R$100,00">R$100,00</option>
+              <option value="Panos de pratos">Panos de pratos</option>
+              <option value="Panela de pressão">Panela de pressão</option>
+              <option value="Kits de potes de vidro">Kits de Potes de vidro</option>
+              <option value="Açucareiro">Açucareiro</option>
+              <option value="Jogo de panelas">Jogo de panelas</option>
+              <option value="Jogo de pratos">Jogo de pratos</option>
+              <option value="Tábua com espátula">Tábua com espátula</option>
+              <option value="Faqueiro">Faqueiro</option>
+              <option value="Batedeira">Batedeira</option>
+              <option value="Kit de lixo para conzinha">Kit de lixo para cozinha</option>
+              <option value="Cabides">Cabides</option>
+              <option value="Baldes de plástico">Baldes de plástico</option>
+              <option value="Jarra">Jarra</option>
+              <option value="Kit banheiro">Kit banheiro</option>
+              <option value="Tapetes">Tapetes</option>
+              <option value="Jogos de copos">Jogo de copos</option>
+              <option value="Toalha de mesa">Toalha de mesa</option>
+              <option value="Concha + Porta-Tempêros">Concha + Porta-Tempêros</option>
+              <option value="Cuscuzeira">Cuscuzeira</option>
+              <option value="Jogo de utensílios">Jogo de utensílios</option>
+              <option value="Forma de bola">Forma de bolo</option>
+              
+            </select>
+
             <button type="submit" id="enviarDados">Enviar</button>
           </form>
         </section>
@@ -77,15 +109,16 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
   const nome = document.getElementById('digiteSeuNome').value;
   const telefone = document.getElementById('digiteSeuTel').value;
+  const presentes = document.getElementById('ativarLista').value;
 
   try {
-    const response = await fetch('https://script.google.com/macros/s/AKfycbzK6MqKXS7BQlmKe7_1AVVQFFguRQO8cXAAa8NirU6d9ty800mYZ0D8WFkPppf-3uD2PA/exec', {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbwtk5q1JmFbq20gNheNXa6djSc1eP-ryF9NOT1AOjxtuPLm22w_y0C79bdp2r5yLBck6A/exec', {
       method: 'POST',
       mode: 'no-cors', // Ou 'no-cors' caso você queira apenas enviar sem ver resposta
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ nome, telefone })
+      body: JSON.stringify({ nome, telefone, presentes })
     });
 
     // Verificar se a requisição foi bem-sucedida
@@ -253,5 +286,17 @@ document.addEventListener('DOMContentLoaded', ()=> {
     font-family: 'poppins';
     font-size: 12px;
   }
+
+  /*Lista de presentes*/
+
+  #ativarLista {
+    background-color: #fff;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 25px;
+    border: none;
+  }
+
+
 
 </style>  
