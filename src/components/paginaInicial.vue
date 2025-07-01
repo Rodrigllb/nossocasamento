@@ -26,7 +26,7 @@
               <option value="Escorredor de pratos">Escorredor de pratos</option>
               <option value="Garrafa de café">Garrafa de café</option>
               <option value="R$100,00">R$100,00</option>
-              <option value="Panos de pratos">Panos de pratos</option>
+              <option value="R$50,00">R$50,00</option>
               <option value="Panela de pressão">Panela de pressão</option>
               <option value="Kits de potes de vidro">Kits de Potes de vidro</option>
               <option value="Açucareiro">Açucareiro</option>
