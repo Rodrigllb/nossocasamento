@@ -1,25 +1,34 @@
 <template>
   <div id="containerPrincipal">
+
     <div class="containerFilho">
-      <header>
+
+    <header>
       <img src="./../assets/logo/logoCasamento.png" alt="logo dos noivos">
     </header>
+
     <main>
+
       <article>
+        
         <section class="contextualizaçao">
           <p>Deus faz tudo perfeito em Seu tempo.
             E somos gratos por vivermos esse momento com pessoas tão especiais como você, que fazem parte da nossa história.</p>
         </section>
+
         <section class="aceitaNossoConvite">
           <h2>Aceita o nosso convite?</h2>
         </section>
 
         <section class="digiteOnome"> <!--Caso o convidado aceite o convite-->
+
           <form id="formulário">
+
             <input type="text" id="digiteSeuNome" placeholder="Digite seu nome" required >
             <input type="text" id="digiteSeuTel" placeholder="Digite seu telefone" required>
     
             <select name="ativarLista" id="ativarLista" required>
+
               <option value="Presentei-nos">Escolha um presente!</option>
               <option value="R$50,00">R$50,00</option>
               <option value="R$100,00">R$100,00</option>
@@ -42,7 +51,9 @@
             </select>
 
             <button type="submit" id="enviarDados">Enviar</button>
+
           </form>
+
         </section>
 
         <section class="simOuNao"> <!--Apelo ao convidado-->
@@ -55,13 +66,17 @@
         </section>
 
         <section class="copyright">
-          <small>Developed by Rodrigo & Paula <br> Todos os direitos reservados 2025</small>
+          <small>Developed by Rodrigo & Paula V1.2 <br> Todos os direitos reservados 2025</small>
         </section>
+
       </article>
+
     </main>
+
     </div>
     
   </div>
+
 </template>
 
 <script>
@@ -154,13 +169,15 @@ document.addEventListener('DOMContentLoaded', ()=> {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #f3f3f396;
+    
   }
  
   .containerFilho { /*Container filho*/
     border-radius: 25px;
-    background-color: #f1f1f1da;
+    background-image: linear-gradient(to bottom, #ffff, #ffffff52);
     padding: 45px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    backdrop-filter: blur(5px);
   }
 
   header { /*Cabeçalho onde contém a logo */
@@ -171,7 +188,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     height: auto;
   }
   header img {
-    width: 185px;
+    width: 155px;
   }
 
   main article { /*Corpo do documento onde contém textos e o formulário para preenchimento */
@@ -185,6 +202,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     width: 220px;
     height: auto;
     text-align: center;
+    font-size: 11pt;
   }
 
   .contextualizaçao { /*Container onde contém a contextualização referente ao convite*/
@@ -193,7 +211,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
   .aceitaNossoConvite h2 { /*Container onde está a estilização do titulo de nível 2*/
     font-family: 'Alex Brush';
-    font-size: 45px;
+    font-size: 38px;
     font-weight: 200;
     padding: 0;
     margin: 0;
