@@ -25,11 +25,7 @@
               <option value="R$150,00">R$150,00</option>
               <option value="Escorredor de pratos">Escorredor de pratos</option>
               <option value="R$100,00">R$100,00</option>
-<<<<<<< HEAD
-=======
               <option value="R$50,00">R$50,00</option>
-              <option value="Panela de pressão">Panela de pressão</option>
->>>>>>> cb6ee54b5cd2c1086e93a6b407191b9b2ec12645
               <option value="Kits de potes de vidro">Kits de Potes de vidro</option>
               <option value="Açucareiro">Açucareiro</option>
               <option value="Jogo de panelas">Jogo de panelas</option>
