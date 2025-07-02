@@ -1,33 +1,33 @@
 <template>
-  <div id="containerPrincipal">
+  <div id="containerPrincipal"><!--Container principal-->
 
-    <div class="containerFilho">
+    <div class="containerFilho"> <!--Sub-container-->
 
-    <header>
+    <header> <!--Cabeçalho, onde fica a logo do convite-->
       <img src="./../assets/logo/logoCasamento.png" alt="logo dos noivos">
     </header>
 
     <main>
 
       <article>
-        
-        <section class="contextualizaçao">
+
+        <section class="contextualizaçao"> <!--Contextualização ao usuário-->
           <p>Deus faz tudo perfeito em Seu tempo.
             E somos gratos por vivermos esse momento com pessoas tão especiais como você, que fazem parte da nossa história.</p>
         </section>
 
-        <section class="aceitaNossoConvite">
+        <section class="aceitaNossoConvite"> <!--Titulo da pergunta para aceitar o nosso convite.-->
           <h2>Aceita o nosso convite?</h2>
         </section>
 
         <section class="digiteOnome"> <!--Caso o convidado aceite o convite-->
 
-          <form id="formulário">
+          <form id="formulário"> <!--formulário-->
 
             <input type="text" id="digiteSeuNome" placeholder="Digite seu nome" required >
             <input type="text" id="digiteSeuTel" placeholder="Digite seu telefone" required>
     
-            <select name="ativarLista" id="ativarLista" required>
+            <select name="ativarLista" id="ativarLista" required><!--Lista suspensa-->
 
               <option value="Presentei-nos">Escolha um presente!</option>
               <option value="R$50,00">R$50,00</option>
@@ -65,7 +65,7 @@
           <p>Gratidão, Deus abençoe!</p>
         </section>
 
-        <section class="copyright">
+        <section class="copyright"> <!--Direitos autorais-->
           <small>Developed by Rodrigo & Paula V1.2 <br> Todos os direitos reservados 2025</small>
         </section>
 
