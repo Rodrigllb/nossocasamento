@@ -34,26 +34,25 @@
               <option value="R$100,00">R$100,00</option>
               <option value="R$150,00">R$150,00</option>
               <option value="R$200,00">R$200,00</option>
-              <option value="Escorredor de pratos">Escorredor de pratos</option>
-              <option value="Kits de potes de vidro">Kits de Potes de vidro</option>
               <option value="Açucareiro">Açucareiro</option>
-              <option value="Jogo de panelas">Jogo de panelas</option>
-              <option value="Tábua com espátula">Tábua com espátula</option>
               <option value="Batedeira">Batedeira</option>
               <option value="Kit de lixo para conzinha">Kit de lixo para cozinha</option>
               <option value="Baldes de plástico">Baldes de plástico</option>
               <option value="Kit banheiro">Kit banheiro</option>
               <option value="Tapetes">Tapetes</option>
-              <option value="Jogos de copos">Jogo de copos</option>
               <option value="Concha + Porta-Tempêros">Concha + Porta-Tempêros</option>
-              <option value="Forma de bola">Forma de bolo</option>
               
             </select>
 
             <button type="submit" id="enviarDados">Enviar</button>
 
           </form>
-
+          <section class="dados-bancarios">
+            <h1>Nosso pix</h1>
+            <small>Tel: 88981331619</small>
+            <small>Rodrigo Lopes Liberato</small>
+        <p>WillBank</p>
+          </section>
         </section>
 
         <section class="simOuNao"> <!--Apelo ao convidado-->
@@ -306,6 +305,16 @@ document.addEventListener('DOMContentLoaded', ()=> {
     border: none;
   }
 
+  /*Dados bancários para envio de valor. */
+  .dados-bancarios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 75px;
+    padding: 28px;
+  }
 
 
 </style>  
